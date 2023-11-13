@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col">
+    <app-list [cvs]="cvs"  (isOpenListChange)="toggleOpen($event)" ></app-list>
+  </div>
+  <div class="col">
+    <ng-container *ngIf="selectedCv">
+      <app-details  [cv]="selectedCv"  (isOpenListChange)="toggleOpen($event)" ></app-details>
+    </ng-container>
+  </div>
+
+
+
+  <div class="row"
+        style="margin-top: 100px"
+  >
+
+    <ng-container *ngIf="isOpenList">
+      <div class="col">
+        <app-list [cvs]="embauches"></app-list>
+      </div>
+    </ng-container>
+
+  </div>
+
+</div>

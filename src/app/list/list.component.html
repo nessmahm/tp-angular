@@ -1,0 +1,10 @@
+<div (click)="onClick()">
+  <ol class="list-group">
+    <li *ngFor="let cv of cvs;"
+          class="list-group-item"
+    >
+      <app-item [cv]="cv"  [isOpen]="isOpen" ></app-item>
+    </li>
+  </ol>
+
+</div>
