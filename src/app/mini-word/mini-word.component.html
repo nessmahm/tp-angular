@@ -1,0 +1,11 @@
+<label for="colored-text">This input changes color.</label>
+<input appColorText id="colored-text"  />
+<p [ngStyle]="{'font-size.px': fontSize, color: color, fontFamily: fontFamily }">{{text}}</p>
+<input type="number" [(ngModel)]="fontSize" />
+<input type="color" [(ngModel)]="color" />
+<select [(ngModel)]="fontFamily">
+  <option>Arial</option>
+  <option>Times New Roman</option>
+  <option>Fantasy</option>
+  <option>Monospace</option>
+</select>

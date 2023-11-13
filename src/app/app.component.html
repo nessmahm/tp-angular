@@ -1,1 +1,7 @@
-<app-cv></app-cv>
+<nav *ngIf="isAuthenticated">
+  <a routerLink="/cv">CV</a>
+  <a routerLink="/mini-word">Mini Word</a>
+</nav>
+<router-outlet></router-outlet>
+<button class="btn btn-primary" *ngIf="isAuthenticated" (click)="logout()">Logout</button>
+
