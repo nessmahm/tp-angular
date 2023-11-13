@@ -12,6 +12,7 @@ import { ListComponent } from './list/list.component';
 import { CvComponent } from './cv/cv.component';
 import { DetailsComponent } from './details/details.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { DetailsPageComponent } from './details-page/details-page.component';
 import { MiniWordComponent } from './mini-word/mini-word.component';
 import { StoreModule } from '@ngrx/store';
 
@@ -23,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
     ListComponent,
     CvComponent,
     DetailsComponent,
+    DetailsPageComponent,
     MiniWordComponent,
     ColorTextDirective,
     FormComponent

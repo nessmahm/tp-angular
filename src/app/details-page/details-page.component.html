@@ -1,0 +1,22 @@
+
+<ng-container *ngIf="cv">
+
+  <div class="card"
+       style="height: 100%;width: 18rem;">
+    <img
+      class="card-img-top"
+      src="{{ cv?.imagePath }}"
+      alt="{{ cv?.firstName }}"
+      style="height: 100px; object-fit: contain"
+
+    />
+
+    <div class="card-body">
+      <h5 class="card-title"> {{ cv?.firstName }} {{" "}} {{ cv?.lastName }}</h5>
+      <p class="card-text">{{cv?.discription}}</p>
+      <button (click)="onEmbaucherCv()" class="btn btn-primary">Embaucher</button>
+
+    </div>
+  </div>
+
+</ng-container>

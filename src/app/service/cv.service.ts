@@ -55,4 +55,29 @@ export class CvService implements OnInit {
   ngOnInit() {
   }
 
+  getCvById(id:string):any {
+
+    this.http.get('https://apilb.tridevs.net/api/personnes/'+id).subscribe(
+    (response:any)=> {
+
+    if (response)
+    {
+      console.log("response",response)
+      const cv = new Cv (response.id,response.name,response.firstname,response.job,response.path)
+      return cv;
+    }
+
+    else {
+      alert("Cv not found");
+      return
+      }
+    },
+  (error)=>{
+        console.log(error)
+      },
+      ()=>{}
+      )
+
+  }
+
 }
