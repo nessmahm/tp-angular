@@ -14,9 +14,27 @@
     <div class="card-body">
       <h5 class="card-title"> {{ cv?.firstName }} {{" "}} {{ cv?.lastName }}</h5>
       <p class="card-text">{{cv?.discription}}</p>
-      <button (click)="onEmbaucherCv()" class="btn btn-primary">Embaucher</button>
+      <button (click)="onEmbaucherCv()"  class="btn btn-primary">Embaucher</button>
+      <button (click)="deletecv()" class="btn btn-primary">Supprimer</button>
 
     </div>
   </div>
 
+  <div class="row"
+       style="margin-top: 100px"
+  >
+
+    <ng-container *ngIf="isOpenList">
+      <div class="col">
+        <app-list [cvs]="embauches"></app-list>
+      </div>
+    </ng-container>
+
+  </div>
+</ng-container>
+<ng-container *ngIf="cvLoaded && !cv">
+    <div class="alert alert-danger">
+      Cv not found
+
+    </div>
 </ng-container>

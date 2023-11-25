@@ -2,6 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {CvService} from "../service/cv.service";
 import {Cv} from "../model/cv";
 import {EmbaucheService} from "../service/embauche.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-cv',
@@ -10,6 +11,7 @@ import {EmbaucheService} from "../service/embauche.service";
 })
 export class CvComponent {
 cvs:Cv[]=[];
+cvs$:Observable<Cv[]>;
 embauches: Cv[] = [];
 selectedCv: Cv | null = null;
 isOpenList:boolean=false;
@@ -22,6 +24,7 @@ isOpenList:boolean=false;
     private embaucheService : EmbaucheService,
 
 )  {
+    this.cvs$ = this.cvService.getAsyncCvs()
     this.cvs=this.cvService.getCvs();
     this.cvService.getSelectCvObservable().subscribe((selectedCv) => {
     this.selectedCv = selectedCv;

@@ -29,9 +29,8 @@ export class FormComponent {
     // Handle form submission here
     // make a post request to the server
     const postData = {email: this.email, password: this.password};
-    const res = await this.http.post<any>('https://apilb.tridevs.net/api/Users/login', postData)
+    this.http.post<any>('https://apilb.tridevs.net/api/Users/login', postData)
       .subscribe(res => {
-        ;
         console.log(res);
         const payload = {
           userId: res?.userId ,
@@ -41,6 +40,7 @@ export class FormComponent {
           email: this.email,
         } as AuthState;
         this.store.dispatch(AuthActions.loginSuccess(payload));
+        localStorage.setItem('user', JSON.stringify(payload))
         this.router.navigate(['/mini-word']);
       });
 

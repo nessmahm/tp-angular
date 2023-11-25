@@ -12,6 +12,8 @@
     <h5 class="card-title"> {{ cv.firstName }} {{" "}} {{ cv.lastName }}</h5>
     <p class="card-text">{{cv.discription}}</p>
     <button (click)="onEmbaucherCv()" class="btn btn-primary">Embaucher</button>
+    <a [routerLink]="[cv.id]" class="btn btn-primary">Voir details</a>
+
 
   </div>
 </div>

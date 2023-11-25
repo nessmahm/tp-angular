@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row" *ngIf="cvs$ | async as cvList">
   <div class="col">
-    <app-list [cvs]="cvs"  (isOpenListChange)="toggleOpen($event)" ></app-list>
+    <app-list [cvs]="cvList"  (isOpenListChange)="toggleOpen($event)" ></app-list>
   </div>
   <div class="col">
     <ng-container *ngIf="selectedCv">

@@ -11,7 +11,8 @@ export interface AuthState {
   email: string | null;
 }
 
-export const initialState: AuthState = {
+const user = JSON.parse(localStorage.getItem('user')|| '{}')
+export const initialState: AuthState =  user || {
   isAuthenticated: false,
   userId: null,
   token: null,

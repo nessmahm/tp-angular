@@ -25,6 +25,7 @@ export class AppComponent {
   title = 'TP1';
   logout() {
     this.store.dispatch(AuthActions.logout())
+    localStorage.removeItem('user')
   }
 }
 
